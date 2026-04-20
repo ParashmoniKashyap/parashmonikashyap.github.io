@@ -549,6 +549,37 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        @media (max-width: 768px) {
+                
+            /* Hide chemistry only */
+            .wm-chem {
+                display: none;
+            }
+        
+            /* Disk (top-right, moderate size) */
+            .wm-disk {
+                width: 500px;
+                height: 500px;
+                top: 10%;
+                right: -25%;
+                opacity: 0.03;
+            }
+        
+            /* ALMA (bottom-right, smaller & subtle) */
+            .wm-alma {
+                width: 300px;
+                height: 300px;
+                bottom: -7%;
+                right: -30%;
+                opacity: 0.3;
+            }
+        
+            /* Improve spacing */
+            .main-content {
+                padding: 30px 20px;
+            }
+        }
     </style>
 </head>
 <body>
