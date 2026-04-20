@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parashmoni Kashyap | Planetary Scientist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-main: #18181b;          /* deeper neutral (less gray) */
+            --bg-sidebar: #202024;      /* slightly elevated */
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+        
+            --accent: #60a5fa;          /* softer teal (less neon) */
+            --accent-soft: rgba(79, 209, 197, 0.12);
+        
+            --border-color: #2a2a2e;
+            --grid-bg: #26262a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family: 'Poppins', sans-serif; */
+            /* font-family: 'Inter', sans-serif; */
+            font-family: 'IBM Plex Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.7;
+            display: flex;
+            min-height: 100vh;
+            box-shadow: 2px 0 20px rgba(0,0,0,0.3);
+        }
+
+        p {
+            line-height: 1.85;
+            font-size: 14.8px;
+        }
+
+        /* .code, .highlight, .timeline-item span {
+            font-family: 'JetBrains Mono', monospace;
+                } */
+
+        .highlight,
+        .timeline-item span.date {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        /* ----- SIDEBAR ----- */
+        .sidebar {
+            width: 320px;
+            background-color: var(--bg-sidebar);
+            position: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--border-color);
+            padding: 40px 30px;
+            overflow-y: auto;
+            background-color: rgba(32, 32, 36, 0.85);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header-info h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+            /* letter-spacing: -0.3px; */
+        }
+
+        /* .header-info h2 {
+            font-size: 13px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        } */
+
+        .header-info h2 {
+            font-size: 13px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /*.profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%; /* Makes the image perfectly round */
+        /*    object-fit: cover; /* Ensures the image doesn't stretch */
+        /*    border: 2px solid var(--border-color);
+            margin-bottom: 20px;
+            padding: 4px;
+            background-color: var(--grid-bg);
+        } */
+        
+        /*.profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 8px; /* Changed from 50% to 8px for slightly rounded square corners. Set to 0px for sharp corners. */
+        /*    object-fit: cover; 
+            border: 0px solid var(--border-color);
+            margin-bottom: 20px;
+            padding: 4px;
+            background-color: var(--grid-bg);
+        }*/
+
+        .profile-img {
+            width: 100%; /* Expands to fill the sidebar perfectly */
+            aspect-ratio: 1 / 1; /* Keeps it a perfect square. Change to 3 / 4 or 4 / 5 for a vertical portrait rectangle */
+            border-radius: 8px; /* Keeps the slight square/rectangular corners */
+            object-fit: cover; /* Ensures the image fills the space without stretching */
+            border: 2px solid var(--border-color);
+            margin-bottom: 20px;
+            padding: 4px;
+            background-color: var(--grid-bg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect */
+        .profile-img:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .postdoc-badge {
+            display: inline-block;
+            margin-top: 8px;
+            color: var(--bg-main); /* Dark text */
+            background-color: var(--accent); /* Cyan background */
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 6px 15px rgba(79, 209, 197, 0.15);; /* Subtle glow */
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+
+        /* Hover effect */
+        .postdoc-badge:hover {
+            transform: translateY(-3px);  /* smaller lift (important) */
+            box-shadow: 0 6px 15px rgba(100, 255, 218, 0.25);
+        }
+
+        /* Navigation */
+        .nav-menu {
+            list-style: none;
+            flex-grow: 1;
+        }
+
+        .nav-menu li {
+            margin-bottom: 15px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-weight: 400;
+            display: block;
+            padding: 8px 0;
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+            padding-left: 10px;
+        }
+
+        .nav-menu a.active {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Thematic Icon Grid (Left Panel Bottom) */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .icon-box {
+            background-color: var(--grid-bg);
+            border-radius: 8px;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+            color: var(--text-secondary);
+        }
+
+        .icon-box:hover {
+            background-color: var(--bg-sidebar);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .icon-box svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* ----- MAIN CONTENT ----- */
+        .main-content {
+            margin-left: 320px;
+            padding: 60px 80px;
+            max-width: 850px;
+            width: 100%;
+        }
+
+        section {
+            margin-bottom: 80px;
+            /* border-bottom: 1px solid rgba(255,255,255,0.04);
+            padding-bottom: 40px; */
+        }
+
+        section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            height: 2px;
+            width: 40px;
+            background-color: var(--accent);
+        }
+
+        p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Timeline / Lists */
+        .timeline-item {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            /* box-shadow: 0 0 8px var(--accent); */ 
+        }
+
+        .timeline-item h3 {
+            font-size: 18px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item span.date {
+            display: block;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .timeline-item h3 a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .timeline-item h3 a:hover {
+            color: var(--accent);
+        }
+
+        /* Contact Details */
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-list strong {
+            color: #ffffff;
+            font-weight: 500;
+            display: inline-block;
+            width: 150px;
+        }
+
+        .contact-list a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-list a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Background Thematic Watermark */
+        /* Base style */
+        .watermark {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 0;
+            color: var(--accent);
+            filter: blur(0.6px);
+        }
+        
+        /* Disk (main visual) */
+        .wm-disk {
+            top: -5%;
+            right: 10%;
+            opacity: 0.04;
+            transform: rotate(-20deg);   /* 👈 PA > 0 */
+            transform-origin: center;
+            width: 1200px;
+            height: 1200px;
+        }
+        
+        /* ALMA (secondary) */
+        .wm-alma {
+            bottom: -8%;     /* 👈 bring inside */
+            right: -9%;     /* 👈 bring inside */
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Chemistry (subtle detail) */
+        .wm-chem {
+            top: -2%;     /* 👈 adjust vertically */
+            left: 18%;     /* 👈 bring inside */
+            opacity: 0.1;
+        }
+
+        .content-wrap {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== FIGURE LAYOUT (ALWAYS ACTIVE) ===== */
+
+        .figure-container {
+            width: 100%;
+            background-color: #303030ff;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        /* Row with 3 images */
+        .figure-row-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .figure-row-3 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Row with 4 images */
+        .figure-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .figure-grid-4 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Each image */
+        .figure-item {
+            flex: 1;
+        }
+
+        .figure-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Caption */
+        .figure-caption-full {
+            background-color: #303030ff;  /* FIXED (was different) */
+            color: #b0b0b0;
+            padding: 15px;
+            font-size: 13.5px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Make figure items behave like cards */
+        /* Smooth animation */
+        .figure-container {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect on entire block */
+        .figure-container:hover {
+            transform: translateY(-6px);  /* lift whole card */
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Press Section */
+        /* Subsection title */
+        .subsection-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        /* List styling */
+        .press-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        /* Each item */
+        .press-list li {
+            margin-bottom: 12px;
+        }
+
+        /* Links */
+        .press-list a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect */
+        .press-list a:hover {
+            text-decoration: underline;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 30px;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 40px 30px;
+            }
+            .icon-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+        @media (max-width: 500px) {
+            .icon-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .figure-grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        
+            .figure-row-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="header-info">
+            <img src="profile2.jpeg" alt="Parashmoni Kashyap" class="profile-img">
+            <h1>Parashmoni Kashyap</h1>
+            <!-- <h2>Planetary Scientist & PhD Scholar</h2> -->
+             <h2>Planetary Scientist & PhD Scholar <br> <span class="postdoc-badge">Postdoctoral Candidate</span></h2>
+        </div>
+        
+        <ul class="nav-menu">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#conferences">Conferences</a></li>
+            <li><a href="#highlights">Highlights</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="icon-grid">
+        
+            <!-- Email -->
+            <a href="mailto:kashyapparashmoni@gmail.com" class="icon-box" title="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+                    <path d="M3 7l9 6 9-6"/>
+                </svg>
+            </a>
+        
+            <!-- ORCID -->
+            <a href="https://orcid.org/0009-0008-2350-5876" target="_blank" class="icon-box" title="ORCID">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="10"/>
+                    <text x="12" y="16" text-anchor="middle" font-size="10" fill="white">iD</text>
+                </svg>
+            </a>
+        
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/parashmoni-kashyap-16455a142" target="_blank" class="icon-box" title="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="2" y="2" width="20" height="20" rx="4"/>
+                    <text x="12" y="16" text-anchor="middle" font-size="10" fill="white">in</text>
+                </svg>
+            </a>
+        
+            <!-- GitHub -->
+            <a href="https://github.com/ParashmoniKashyap" target="_blank" class="icon-box" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.5 2 2 6.5 2 12c0 4.4 2.9 8.1 6.8 9.4.5.1.7-.2.7-.5v-2
+                    c-2.8.6-3.4-1.2-3.4-1.2-.5-1.1-1.2-1.4-1.2-1.4-1-.7.1-.7.1-.7
+                    1.1.1 1.7 1.2 1.7 1.2 1 .1 1.6-.8 1.6-.8.1-.7.4-1.2.7-1.5
+                    -2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1.1-2.7-.1-.3-.5-1.3.1-2.6
+                    0 0 .9-.3 2.8 1.1a9.7 9.7 0 0 1 5.2 0c1.9-1.4 2.8-1.1 2.8-1.1
+                    .6 1.3.2 2.3.1 2.6.7.7 1.1 1.6 1.1 2.7 0 3.9-2.4 4.8-4.7 5
+                    .4.3.8 1 .8 2v3c0 .3.2.6.7.5A10 10 0 0 0 22 12c0-5.5-4.5-10-10-10z"/>
+                </svg>
+            </a>
+        
+            <!-- Google Scholar -->
+            <a href="https://scholar.google.com/citations?user=3-85EEwAAAAJ&hl=en&authuser=1" target="_blank" class="icon-box" title="Google Scholar">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 3L2 9l10 6 10-6-10-6zm0 13l-7-4v5l7 4 7-4v-5l-7 4z"/>
+                </svg>
+            </a>
+        
+            <!-- CV -->
+            <a href="cv.pdf" download class="icon-box" title="Download CV">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 3v12"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <rect x="4" y="18" width="16" height="3" rx="1"/>
+                </svg>
+            </a>
+        
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <svg class="watermark wm-disk" viewBox="0 0 500 500" fill="none" stroke="currentColor" stroke-width="1">
+            <circle cx="250" cy="250" r="5" fill="currentColor"/>
+            <ellipse cx="250" cy="250" rx="200" ry="80"/>
+            <ellipse cx="250" cy="250" rx="160" ry="60"/>
+            <ellipse cx="250" cy="250" rx="120" ry="45"/>
+            <ellipse cx="250" cy="250" rx="80" ry="30"/>
+        </svg>
+
+
+        <svg class="watermark wm-alma" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+        
+          <defs>
+            <!-- Reusable antenna -->
+            <symbol id="antenna" viewBox="0 0 300 320">
+              <g stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            
+                <!-- Tower -->
+                <g>
+                  <path d="M 150 160 L 90 280 L 210 280 Z" />
+                  <path d="M 150 160 L 150 280" />
+                  <path d="M 150 185 L 120 235 L 150 265 L 180 235 Z" />
+                  <path d="M 90 280 L 150 220 L 210 280" />
+                  <path d="M 110 240 L 190 240" />
+                  <path d="M 130 200 L 170 200" />
+                  <path d="M 150 205 L 135 235 L 150 250 L 165 235 Z" />
+                </g>
+            
+                <!-- Feed -->
+                <path d="M 140 155 L 160 155 L 155 165 L 145 165 Z" />
+            
+                <!-- Dish -->
+                <g transform="rotate(-45 150 150)">
+                  <path d="M 50 110 C 70 145, 120 155, 150 155 C 180 155, 230 145, 250 110 Z" />
+                  <path d="M 75 110 C 90 140, 130 150, 150 155" />
+                  <path d="M 115 110 C 125 145, 140 152, 150 155" />
+                  <path d="M 150 110 L 150 155" />
+                  <path d="M 185 110 C 175 145, 160 152, 150 155" />
+                  <path d="M 225 110 C 210 140, 170 150, 150 155" />
+                
+                  <ellipse cx="150" cy="110" rx="100" ry="15" />
+                  <ellipse cx="150" cy="110" rx="95" ry="12" />
+                
+                  <path d="M 150 110 L 150 20" stroke-dasharray="6 4" />
+                  <circle cx="150" cy="20" r="4" />
+                </g>
+              </g>
+            </symbol>
+          </defs>
+      
+          <!-- BACK ROW (small, tightly grouped) -->
+          <g opacity="0.35" transform="skewX(-8)">
+            <use href="#antenna" x="170" y="70" width="80" height="90"/>
+            <use href="#antenna" x="240" y="65" width="85" height="95"/>
+            <use href="#antenna" x="310" y="70" width="80" height="90"/>
+          </g>
+      
+          <!-- MID ROW (closer + larger) -->
+          <g opacity="0.65" transform="skewX(-5)">
+            <use href="#antenna" x="140" y="120" width="120" height="140"/>
+            <use href="#antenna" x="220" y="115" width="130" height="150"/>
+            <use href="#antenna" x="300" y="120" width="120" height="140"/>
+          </g>
+      
+          <!-- FRONT CLUSTER (dominant + slightly varied angles) -->
+          <g>
+            <use href="#antenna" x="180" y="170" width="180" height="200" transform="rotate(-2 270 250)"/>
+            <use href="#antenna" x="260" y="180" width="170" height="190" transform="rotate(2 340 260)"/>
+          </g>
+      
+          <!-- MAIN FRONT ANTENNA -->
+          <g>
+            <use href="#antenna" x="220" y="160" width="240" height="260"/>
+          </g>
+      
+        </svg>
+
+
+        <svg class="watermark wm-chem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+
+          <defs>
+            <!-- subtle glow -->
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+        
+            <!-- molecule style -->
+            <g id="molecule" stroke="currentColor" stroke-width="1.5" fill="none" filter="url(#glow)">
+              <!-- bonds -->
+              <line x1="0" y1="0" x2="30" y2="-20"/>
+              <line x1="0" y1="0" x2="-25" y2="-10"/>
+              <line x1="0" y1="0" x2="5" y2="30"/>
+            
+              <!-- atoms -->
+              <circle cx="0" cy="0" r="3"/>
+              <circle cx="30" cy="-20" r="3"/>
+              <circle cx="-25" cy="-10" r="3"/>
+              <circle cx="5" cy="30" r="3"/>
+            </g>
+        
+            <!-- smaller variant -->
+            <g id="molecule-small" stroke="currentColor" stroke-width="1" fill="none" opacity="0.7">
+              <line x1="0" y1="0" x2="20" y2="-10"/>
+              <line x1="0" y1="0" x2="-15" y2="-5"/>
+              <circle cx="0" cy="0" r="2"/>
+              <circle cx="20" cy="-10" r="2"/>
+              <circle cx="-15" cy="-5" r="2"/>
+            </g>
+          </defs>
+      
+          <!-- scattered molecules -->
+          <g>
+            <use href="#molecule" transform="translate(120,120) rotate(20)"/>
+            <use href="#molecule" transform="translate(300,80) rotate(-15)"/>
+            <use href="#molecule" transform="translate(500,140) rotate(10)"/>
+            <use href="#molecule" transform="translate(650,90) rotate(-25)"/>
+        
+            <use href="#molecule-small" transform="translate(200,200) rotate(30)"/>
+            <use href="#molecule-small" transform="translate(400,250) rotate(-10)"/>
+            <use href="#molecule-small" transform="translate(600,220) rotate(15)"/>
+            <use href="#molecule-small" transform="translate(100,300) rotate(-20)"/>
+        
+            <!-- tiny floating atoms -->
+            <circle cx="150" cy="60" r="1.5" fill="currentColor" opacity="0.6"/>
+            <circle cx="350" cy="40" r="1.5" fill="currentColor" opacity="0.6"/>
+            <circle cx="700" cy="200" r="1.5" fill="currentColor" opacity="0.6"/>
+            <circle cx="250" cy="320" r="1.5" fill="currentColor" opacity="0.6"/>
+          </g>
+      
+        </svg>
+
+        <div class="content-wrap">
+            <section id="about">
+                <h2 class="section-title">About Me</h2>
+                <p>I am a PhD student in Planetary Sciences at the School of Earth and Planetary Sciences (SEPS), National Institute of Science 
+                    Education and Research (NISER), working under the supervision of Dr. Liton Majumdar.</p>
+                <p>My research lies at the intersection of <span class="highlight">ALMA observational analysis</span>, 
+                    <span class="highlight">protoplanetary disks</span>, and <span class="highlight">astrochemistry</span>. 
+                    I focus on the formation and evolution of planets within protoplanetary disks, the birthplaces of exoplanets. 
+                    By utilizing high-resolution observations from the Atacama Large Millimeter/submillimeter Array (ALMA) in Chile, 
+                    I investigate the intricate physical and chemical environments of these planetary nurseries.</p>
+            </section>
+
+            <section id="research">
+                <h2 class="section-title">Research & Development</h2>
+
+                <div class="timeline-item">
+                    <h3>Evolutionary Origin of Planets</h3>
+                    <span class="date">Core Focus</span>
+                    <p>With over 6,000 exoplanets discovered, my aim is to bridge the gap between the initial conditions in 
+                        protoplanetary disks inherited by nascent planets and the diverse characteristics of mature planetary 
+                        systems and draw inferences on planet formation theory.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3> ALMA Observation Analysis : DRive</h3>
+                    <span class="date">Ongoing Project</span>
+                    <p> My expertise lies in ALMA observational analysis. To facilitate my work, I have developed <strong>DRive</strong>, 
+                        a Python based disk retrieval package comprising a comprehensive suite of tools that streamline the retrieval, processing, 
+                        and visualization of data from protoplanetary disk observations. It is designed to extract the physical and chemical 
+                        conditions in the planet-forming regions of disks, leveraging the extensive ALMA data archive.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3> Astrochemical Modelling of Disk : PEGASIS</h3>
+                    <span class="date">Ongoing Project</span>
+                    <p>As part of the development team and an active maintainer of the 3-phase astrochemical code <strong>PEGASIS</strong>, 
+                        I specialize in simulating chemical evolution in molecular clouds (0D) and protoplanetary disks (1+1D). 
+                        My research leverages these chemical models to gain deeper insights into the physical conditions and 
+                        chemical pathways driving disk evolution.</p>
+                </div>
+                
+            </section>
+
+            <section id="publications">
+                <h2 class="section-title">Publications</h2>
+                <div class="timeline-item">
+                    <h3>
+                        <a href="https://doi.org/10.3847/1538-4365/ae278e" target="_blank">
+                            Unveiling the Chemical Complexity and C/O Ratio of the HD 163296 Protoplanetary Disk: Constraints 
+                            from Multiline ALMA Observations of Organics, Nitriles, and Sulfur-bearing and Deuterated Molecules
+                        </a>
+                    </h3>
+                    <span class="date">The Astrophysical Journal Supplement Series, 2026</span>
+                    <p>Authors: Parashmoni Kashyap, Liton Majumdar, Edwin A. Bergin, Geoffrey A. Blake, Karen Willacy, 
+                        Stéphane Guilloteau, Anne Dutrey, Sheng-Yuan Liu, Thomas Henning, Paul F. Goldsmith, Dariusz C. 
+                        Lis, S. Maitrey, Neal Turner, Raghvendra Sahai, Chin-Fei Lee, and Masao Saito</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>
+                        <a href="https://doi.org/10.3847/1538-4357/ad815c" target="_blank">
+                            Chemistry in the GG Tau A Disk: Constraints from H<sub>2</sub>D<sup>+</sup>, N<sub>2</sub>H<sup>+</sup>, and DCO<sup>+</sup> High Angular Resolution ALMA Observations
+                        </a>
+                    </h3>
+                    <span class="date">The Astrophysical Journal, 2024</span>
+                    <p>Authors: Parashmoni Kashyap, Liton Majumdar, Anne Dutrey, Stéphane Guilloteau, Karen Willacy, Edwige Chapillon, 
+                        Richard Teague, Dmitry Semenov, Thomas Henning, Neal Turner, Raghvendra Sahai, Ágnes Kóspál, Audrey Coutens, 
+                        V. Piétu, Pierre Gratier, Maxime Ruaud, N. T. Phuong, E. Di Folco, Chin-Fei Lee, and Y.-W. Tang</p>
+                </div>
+            </section>
+
+            <section id="conferences">
+                <h2 class="section-title">Conferences</h2>
+                <div class="timeline-item">
+                    <h3>Exploring Exoplanets: The Journey to Discover New Frontiers and Habitable Worlds</h3>
+                    <span class="date">International Centre for Theoretical Sciences, Bangalore, India | March 2026</span>
+                    <p>Oral Presentation: "The Birthplace of Giant Exoplanets : Unveiling Disk Physics and Chemistry in HD 163296"</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Origins of Solar Systems: Gordon Research Conference</h3>
+                    <span class="date">Mount Holyoke College, South Hadley, MA, USA | June 2025</span>
+                    <p>Poster Presentation: "Probing the Cold Midplane of GG Tau A: Insights from 
+                        High-Resolution ALMA Observations of H<sub>2</sub>D<sup>+</sup> , N<sub>2</sub>H<sup>+</sup> , and DCO<sup>+</sup>"</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Strange New Worlds: The Exploration of Exoplanets</h3>
+                    <span class="date">Indian Institute of Science Education and Reserach Pune, India | August 2023</span>
+                    <p>Oral Presentation: "The Emergence of Life Forming Molecules in Planet Formation"</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>41<sup>st</sup> meeting of The Astronomical Society of India</h3>
+                    <span class="date">Indian Institute of Technology Indore, India | March 2023</span>
+                    <p>Poster Presentation: "Investigating the Origin of Prebiotic Molecules in Early Stages of Planetary Evolution"</p>
+                </div>
+            </section>
+
+            <section id="highlights">
+                <h2 class="section-title">Highlights</h2>
+               
+                <div class="figure-container">
+
+                    <div class="figure-row-3">
+                        <div class="figure-item">
+                            <img src="ggtau_n2h+.png" alt="N2H+">
+                        </div>
+                    
+                        <div class="figure-item">
+                            <img src="ggtau_dco+.png" alt="DCO+">
+                        </div>
+                    
+                        <div class="figure-item">
+                            <img src="ggtau_cont.png" alt="Continuum">
+                        </div>
+                    </div>
+                
+                    <div class="figure-caption-full">
+                        In the protoplanetary disk GG Tau A, we probed unprecedentedly close to the midplane, 
+                        tracing the coldest regions yet observed with temperatures dropping to as low as 12 K 
+                        <em>(Kashyap et al. 2024)</em>.
+                    </div>
+                
+                </div>
+
+                <br>
+                <div class="figure-container">
+
+                    <div class="figure-grid-4">
+                    
+                        <img src="hd163296_h2co.png">
+                        <img src="hd163296_hc3n.png">
+                        <img src="hd163296_hcn.png">
+                        <img src="hd163296_dcn.png">
+                    
+                        <img src="hd163296_cs.png">
+                        <img src="hd163296_hco+.png">
+                        <img src="hd163296_dco+.png">
+                        <img src="hd163296_cont.png">
+                    
+                    </div>
+                
+                    <div class="figure-caption-full">
+                        In the disk around HD 163296, our multiline analysis demonstrates that nitrogen-bearing 
+                        molecules like HCN, DCN, HC<sub>3</sub>​N, and HNCO are strongly influenced by the C/O ratio, making 
+                        them powerful tracers C/O in protoplanetary environments
+                        <em>(Kashyap et al. 2026)</em>.
+
+                    </div>
+                
+                </div>
+
+                <div class="press-section">
+
+                    <h3 class="subsection-title">Press Coverage & Media Features</h3>
+
+                    <ul class="press-list">
+                        <li>
+                            <a href="https://www.nature.com/articles/d44151-024-00200-w" target="_blank">
+                                Discovery of the birthplace of baby exoplanets – Nature India
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="https://www.telegraphindia.com/india/indian-scientists-discover-planet-forming-regions-near-young-star-gg-tau-a/cid/2068592" target="_blank">
+                                Indian scientists discover planet-forming regions near young star – The Telegraph
+                            </a>
+                        </li>
+                    
+                    </ul>
+                
+                </div>
+
+
+            </section>
+
+            <section id="contact">
+                <h2 class="section-title">Contact</h2>
+                    <ul class="contact-list">
+
+                        <li>
+                            <strong>Institution</strong>
+                            <span>
+                                National Institute of Science Education and Research (NISER) Bhubaneswar, Jatini,<br>
+                                Odisha-752050, India
+                            </span>
+                        </li>
+                    
+                        <li>
+                            <strong>Email (Primary)</strong>
+                            <span>
+                                <a href="mailto:kashyapparashmoni@gmail.com">kashyapparashmoni@gmail.com</a>
+                            </span>
+                        </li>
+                    
+                        <li>
+                            <strong>Email (Academic)</strong>
+                            <span>
+                                <a href="mailto:parashmoni.kashyap@niser.ac.in">parashmoni.kashyap@niser.ac.in</a>
+                            </span>
+                        </li>
+                    
+                        <li>
+                            <strong>ORCID</strong>
+                            <span>
+                                <a href="https://orcid.org/0009-0008-2350-5876">0009-0008-2350-5876</a>
+                            </span>
+                        </li>
+                    
+                        <li>
+                            <strong>LinkedIn</strong>
+                            <span>
+                                <a href="https://linkedin.com/in/parashmoni-kashyap-16455a142">parashmoni-kashyap-16455a142</a>
+                            </span>
+                        </li>
+                    
+                        <li>
+                            <strong>GitHub</strong>
+                            <span>
+                                <a href="https://github.com/ParashmoniKashyap">ParashmoniKashyap</a>
+                            </span>
+                        </li>
+                    
+                    </ul>
+            </section>
+        </div>
+    </main>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-menu a");
+
+    window.addEventListener("scroll", () => {
+        let currentSection = "";
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+
+            if (rect.top <= 150 && rect.bottom >= 150) {
+                currentSection = section.id;
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+
+            if (link.getAttribute("href") === "#" + currentSection) {
+                link.classList.add("active");
+            }
+        });
+    });
+
+});
+</script>
+</body>
+</html>
